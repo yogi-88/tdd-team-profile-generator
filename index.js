@@ -118,3 +118,11 @@ function createTeam(team) {
         }
     });
 }
+
+function start() {
+    const team = []; // array of Employee objects (array of Manager, or Engineers, or Intern)
+    // Employee can be MAnager, Engineer, or Intern
+    createManager(team);
+}
+
+start();
