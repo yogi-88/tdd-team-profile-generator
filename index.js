@@ -1,7 +1,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const path = require("path");
 const fs = require("fs");
 
@@ -10,7 +10,10 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-
+// Create the output directory if it doesn't exist
+if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR);
+  }
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 function createEngineer(team) {
     inquirer.prompt([
@@ -28,7 +31,7 @@ function createEngineer(team) {
             message: "What is the engineer's email address?",
 
             type: 'input',
-            name: 'github',
+            name: 'githubUsername',
             message: "What is the engineer's github username?"
         }
     ]).then((engineerDetails) => {
