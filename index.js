@@ -21,19 +21,28 @@ function createEngineer(team) {
             type: 'input',
             name: 'name',
             message: "What is the engineer's name?",
-
+        },
+        {
             type: 'input',
             name: 'id',
             message: "What is the engineer's id?",
 
+        },
+        {
+            
             type: 'input',
             name: 'email',
             message: "What is the engineer's email address?",
 
+        },
+        {
             type: 'input',
             name: 'githubUsername',
             message: "What is the engineer's github username?"
+
         }
+
+
     ]).then((engineerDetails) => {
         const engineer = new Engineer(engineerDetails.name, engineerDetails.id, engineerDetails.email, engineerDetails.githubUsername)
         team.push(engineer);
@@ -47,19 +56,24 @@ function createManager(team) {
             type: 'input',
             name: 'name',
             message: "What is the Manager's name?",
-
+        },
+        {
             type: 'input',
             name: 'id',
             message: "What is the Manager's id?",
-
+        },
+        {
             type: 'input',
             name: 'email',
             message: "What is the Manager's email address?",
-
+        },
+        {
             type: 'input',
             name: 'officeNumber',
             message: "What is the Manager's office number?"
         }
+           
+
     ]).then((managerDetails) => {
         const manager = new Manager(managerDetails.name, managerDetails.id, managerDetails.email, managerDetails.officeNumber)
         team.push(manager);
@@ -73,19 +87,23 @@ function createIntern(team) {
             type: 'input',
             name: 'name',
             message: "What is the Intern's name?",
-
+        },
+        {
             type: 'input',
             name: 'id',
             message: "What is the Intern's id?",
-
+        },
+        {
             type: 'input',
             name: 'email',
             message: "What is the Intern's email address?",
-
+        },
+        {
             type: 'input',
             name: 'school',
             message: "What is the Intern's school name?"
         }
+
     ]).then((internDetails) => {
         const intern = new Intern(internDetails.name, internDetails.id, internDetails.email, internDetails.school)
         team.push(intern);
