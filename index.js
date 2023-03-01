@@ -37,14 +37,14 @@ function createEngineer(team) {
         },
         {
             type: 'input',
-            name: 'githubUsername',
+            name: 'github',
             message: "What is the engineer's github username?"
 
         }
 
 
     ]).then((engineerDetails) => {
-        const engineer = new Engineer(engineerDetails.name, engineerDetails.id, engineerDetails.email, engineerDetails.githubUsername)
+        const engineer = new Engineer(engineerDetails.name, engineerDetails.id, engineerDetails.email, engineerDetails.github)
         team.push(engineer);
         createTeam(team);
     })
